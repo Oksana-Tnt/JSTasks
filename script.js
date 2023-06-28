@@ -34,3 +34,10 @@ const resArray = [];
 
 console.log(getDoubleNum([1, 2, 3, 5, 2, 5, 1, 2, 5, 2, 4, 2, 4], 2));
 
+--------------------------------------------------------------------------------------------------------------
+    function arrayDiff(a, b) {
+    return a.filter(item => !b.includes(item));
+};
+
+console.log(arrayDiff([1,2,2,2,3],[2]));   /* [1,3]*/
+
