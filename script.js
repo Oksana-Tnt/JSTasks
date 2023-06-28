@@ -13,7 +13,7 @@ function pigIt(str){
 
 console.log(pigIt('Hello world !'));
 
-
+----------------------------------------------------------------------------------------------------
 
 function getDoubleNum(array, target) {   
 const resArray = [];
