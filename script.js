@@ -11,7 +11,7 @@ function pigIt(str){
     return res;
 }
 
-console.log(pigIt('Hello world !'));
+console.log(pigIt('Hello world !')); /*return [ 'elloHay', 'orldway', '!ay' ]*/
 
 ----------------------------------------------------------------------------------------------------
 
@@ -32,7 +32,8 @@ const resArray = [];
        
 }
 
-console.log(getDoubleNum([1, 2, 3, 5, 2, 5, 1, 2, 5, 2, 4, 2, 4], 2));
+console.log(getDoubleNum([1, 2, 3, 5, 2, 5, 1, 2, 5, 2, 4, 2, 4], 2)); /*return [1, 2, 3, 5, 2,  5, 1, 4, 4]*/
+
 
 --------------------------------------------------------------------------------------------------------------
     function arrayDiff(a, b) {
@@ -40,4 +41,43 @@ console.log(getDoubleNum([1, 2, 3, 5, 2, 5, 1, 2, 5, 2, 4, 2, 4], 2));
 };
 
 console.log(arrayDiff([1,2,2,2,3],[2]));   /* [1,3]*/
+
+----------------------------------------------------------------------------------------------------------------
+    1) function validBraces(braces){
+  const matches = { '(':')', '{':'}', '[':']' };
+  const stack = [];
+  let currentChar;
+
+  for (let i=0; i<braces.length; i++) {
+    currentChar = braces[i];
+
+    if (matches[currentChar]) { // opening braces
+      stack.push(currentChar);
+    } else { // closing braces
+      if (currentChar !== matches[stack.pop()]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0; // any unclosed braces left?
+}
+
+2) function validBraces(braces){
+  const bracesHash = {'(': ')', '[': ']', '{': '}'};
+  const bracesStack = [];
+
+  for (const brace of braces) {
+    if (bracesHash[brace])
+      bracesStack.push(brace);
+    else if (brace !== bracesHash[bracesStack.pop()])
+      return false;
+  }
+
+  return bracesStack.length === 0;
+}
+
+
+console.log(validBraces("(){}[]")); // return true
+
 
