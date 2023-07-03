@@ -81,7 +81,7 @@ console.log(arrayDiff([1,2,2,2,3],[2]));   /* [1,3]*/
 console.log(validBraces("(){}[]")); // return true
 
 ----------------------------------------------------------------------------------
-    function camelCase(str) {
+function camelCase(str) {
   const result=[];
 let replaceStr=str.replaceAll("_", " ");
 replaceStr=replaceStr.replaceAll("-", " ").split(" ");
@@ -89,10 +89,10 @@ for(let i=0; i<replaceStr.length; i+=1){
   result.push(replaceStr[i][0].toUpperCase()+replaceStr[i].slice(1));
 }
 
- return result.join(" ");
+ return result.join("");
 };
 
 
-console.log(camelCase("dfg_ff-gfgh")); /*return Dfg Ff Gfgh*/
+console.log(camelCase("dfg_ff-gfgh")); //return DfgFfGfgh
 
 
