@@ -95,4 +95,16 @@ for(let i=0; i<replaceStr.length; i+=1){
 
 console.log(camelCase("dfg_ff-gfgh")); //return DfgFfGfgh
 
+---------------------------------------------------------------------------------------------------
+    function toWeirdCase(string){
+
+return string.split(" ").map(item =>{
+  return item.split("").map((item,index) => {
+    return index %2 === 0?item.toUpperCase():item.toLowerCase();
+  }).join("");
+}).join(" ");
+};
+
+console.log(toWeirdCase("This is a test"));//return ThIs Is A TeSt
+
 
