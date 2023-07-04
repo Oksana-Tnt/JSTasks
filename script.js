@@ -107,4 +107,20 @@ return string.split(" ").map(item =>{
 
 console.log(toWeirdCase("This is a test"));//return ThIs Is A TeSt
 
+----------------------------------------------------------------------------------------------------------
+    var uniqueInOrder=function(iterable){
+  //your code here - remember iterable can be a string or an array
+  const resArray=[]; 
+  
+  for(let i=0; i<iterable.length; i+=1){
+    if(iterable[i]!=iterable[i+1]){
+      resArray.push(iterable[i]);
+    }
+  }
+  return resArray;
+};
+
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));//return [ 'A', 'B', 'C', 'D', 'A', 'B' ]
+console.log(uniqueInOrder([1,2,2,3,3]));//return [ 1, 2, 3 ]
 
