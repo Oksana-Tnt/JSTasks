@@ -124,3 +124,22 @@ console.log(toWeirdCase("This is a test"));//return ThIs Is A TeSt
 console.log(uniqueInOrder('AAAABBBCCDAABBB'));//return [ 'A', 'B', 'C', 'D', 'A', 'B' ]
 console.log(uniqueInOrder([1,2,2,3,3]));//return [ 1, 2, 3 ]
 
+-----------------------------------------------------------------------------------------------------------------
+    function sortArray(array) {
+  
+  const odds = array.filter(item => item %2 !==0).sort((a,b)=>a-b);
+
+  const result = array.map(item => {
+    if(item %2 !==0){
+      item = odds.shift();
+    }
+    return item;
+  })
+
+return result;
+  
+};
+
+console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));//return 1, 8, 3, 6, 5,4, 7, 2, 9, 0
+
+
