@@ -142,4 +142,17 @@ return result;
 
 console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));//return 1, 8, 3, 6, 5,4, 7, 2, 9, 0
 
+--------------------------------------------------------------------------------------------------------------------------
+    function count(string) {
+ const result = string.split("").reduce((acc, item)=>{
+ acc.hasOwnProperty(item) ? (acc[item] += 1) : (acc[item] = 1);
+ 
+ return acc;} , {}); 
+
+ return result;
+
+} 
+
+console.log(count("aba"));//return { a: 2, b: 1 }
+
 
