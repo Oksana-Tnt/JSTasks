@@ -155,4 +155,32 @@ console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));//return 1, 8, 3, 6, 5,4,
 
 console.log(count("aba"));//return { a: 2, b: 1 }
 
+---------------------------------------------------------------------------------------------------------------------------------
+    function order(words){
 
+  const wordsObj = words.split(" ").reduce((acc, item) => {
+    item.split("").find(letter => {
+      if(Number.isInteger(Number(letter))){
+        acc[item] = letter;        
+      }
+      
+    });
+    
+    return acc;    
+ }  
+    , {});
+const sortWords=Object.fromEntries(Object.entries(wordsObj).sort((a,b)=>a[1]-b[1]));
+const result=Object.keys(sortWords).join(" ");
+
+    return result;    
+    
+};
+
+***************
+2d version
+function order(words){
+    return words.split(' ').sort((a, b) => a.split('').find(Number) - b.split('').find(Number)).join(' ');
+};
+***************
+
+console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //return Fo1r the2 g3ood 4of th5e pe6ople
