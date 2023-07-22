@@ -13,7 +13,7 @@ function pigIt(str){
 
 console.log(pigIt('Hello world !')); /*return [ 'elloHay', 'orldway', '!ay' ]*/
 
-----------------------------------------------------------------------------------------------------
+*********************************************************************************************************************
 
 function getDoubleNum(array, target) {   
 const resArray = [];
@@ -35,14 +35,14 @@ const resArray = [];
 console.log(getDoubleNum([1, 2, 3, 5, 2, 5, 1, 2, 5, 2, 4, 2, 4], 2)); /*return [1, 2, 3, 5, 2,  5, 1, 4, 4]*/
 
 
---------------------------------------------------------------------------------------------------------------
+***************************************************************************************************************
     function arrayDiff(a, b) {
     return a.filter(item => !b.includes(item));
 };
 
 console.log(arrayDiff([1,2,2,2,3],[2]));   /* [1,3]*/
 
-----------------------------------------------------------------------------------------------------------------
+*****************************************************************************************************************
     1) function validBraces(braces){
   const matches = { '(':')', '{':'}', '[':']' };
   const stack = [];
@@ -80,7 +80,7 @@ console.log(arrayDiff([1,2,2,2,3],[2]));   /* [1,3]*/
 
 console.log(validBraces("(){}[]")); // return true
 
-----------------------------------------------------------------------------------
+**************************************************************************************************
 function camelCase(str) {
   const result=[];
 let replaceStr=str.replaceAll("_", " ");
@@ -95,7 +95,7 @@ for(let i=0; i<replaceStr.length; i+=1){
 
 console.log(camelCase("dfg_ff-gfgh")); //return DfgFfGfgh
 
----------------------------------------------------------------------------------------------------
+*****************************************************************************************************
     function toWeirdCase(string){
 
 return string.split(" ").map(item =>{
@@ -107,7 +107,7 @@ return string.split(" ").map(item =>{
 
 console.log(toWeirdCase("This is a test"));//return ThIs Is A TeSt
 
-----------------------------------------------------------------------------------------------------------
+********************************************************************************************************
     var uniqueInOrder=function(iterable){
   //your code here - remember iterable can be a string or an array
   const resArray=[]; 
@@ -124,7 +124,7 @@ console.log(toWeirdCase("This is a test"));//return ThIs Is A TeSt
 console.log(uniqueInOrder('AAAABBBCCDAABBB'));//return [ 'A', 'B', 'C', 'D', 'A', 'B' ]
 console.log(uniqueInOrder([1,2,2,3,3]));//return [ 1, 2, 3 ]
 
------------------------------------------------------------------------------------------------------------------
+***********************************************************************************************************
     function sortArray(array) {
   
   const odds = array.filter(item => item %2 !==0).sort((a,b)=>a-b);
@@ -142,8 +142,8 @@ return result;
 
 console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));//return 1, 8, 3, 6, 5,4, 7, 2, 9, 0
 
---------------------------------------------------------------------------------------------------------------------------
-    function count(string) {
+*****************************************************************************************************************
+function count(string) {
  const result = string.split("").reduce((acc, item)=>{
  acc.hasOwnProperty(item) ? (acc[item] += 1) : (acc[item] = 1);
  
@@ -155,7 +155,7 @@ console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));//return 1, 8, 3, 6, 5,4,
 
 console.log(count("aba"));//return { a: 2, b: 1 }
 
----------------------------------------------------------------------------------------------------------------------------------
+********************************************************************************************************************
     function order(words){
 
   const wordsObj = words.split(" ").reduce((acc, item) => {
@@ -184,3 +184,15 @@ function order(words){
 ***************
 
 console.log(order("4of Fo1r pe6ople g3ood th5e the2")); //return Fo1r the2 g3ood 4of th5e pe6ople
+
+********************************************************************************************************************
+       
+function duplicateEncode(word) {
+  const wordArr = word.toLowerCase().split("");
+  const resultArr = wordArr.map(item => 
+     wordArr.filter(filterEl => filterEl === item).length > 1 ? ")" : "("
+  ).join(""); 
+  
+  return resultArr;
+}
+ console.log(duplicateEncode("Success"));//return ")())())";
