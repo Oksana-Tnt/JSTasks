@@ -196,3 +196,27 @@ function duplicateEncode(word) {
   return resultArr;
 }
  console.log(duplicateEncode("Success"));//return ")())())";
+
+***************************************************************************************************************************
+    function highestRank(arr) {
+  let max = 0;
+  let maxEl = 0;
+  const result=arr.reduce((acc, item) => {
+       acc.hasOwnProperty(item) ? (acc[item] += 1) : (acc[item] = 1);
+    if (acc[item] > max) {
+      max = acc[item];
+       }
+       
+    return acc;
+       
+    }  
+    , {});
+  for (const el in result) {
+    if (result[el] === max) {
+      maxEl = el;
+    }
+  }
+  return Number(maxEl);
+};
+
+console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]));//return 10
